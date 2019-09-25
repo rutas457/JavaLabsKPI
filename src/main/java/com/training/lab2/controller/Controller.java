@@ -4,28 +4,33 @@ import com.training.lab2.model.Notebook;
 import com.training.lab2.model.TeacherNotebook;
 import com.training.lab2.view.View;
 
-import java.sql.Date;
 import java.util.Scanner;
 
 public class Controller {
 
-    private Notebook model;
+    private TeacherNotebook teacherNotebook;
     private View view;
 
-    public Controller(Notebook model, View view) {
-        this.model = model;
+    public Controller(TeacherNotebook model, View view) {
+        this.teacherNotebook = model;
         this.view = view;
     }
 
     public void processUser() {
-        Scanner sc = new Scanner(System.in);
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            addNotebook(sc);
+        }
 
     }
 
-    private void addNotebook(TeacherNotebook teacherNotebook, Scanner sc){
+    private void addNotebook(Scanner sc) {
+
         InputNoteNotebook inputNoteNoteBook =
                 new InputNoteNotebook(view, sc);
         inputNoteNoteBook.inputNote();
+
+        Notebook model = new Notebook();
 
         model.setName(inputNoteNoteBook.getName());
         model.setSurname(inputNoteNoteBook.getSurname());
@@ -40,6 +45,10 @@ public class Controller {
                 inputNoteNoteBook.getApartmentNumber() + " "
         ));
 
-        model.setDateOfBirth(Date.valueOf(inputNoteNoteBook.getDateOfBirth()));
+        model.setDateOfBirth(inputNoteNoteBook.getDateOfBirth());
+
+        teacherNotebook.getNotebookList().add(model);
+
+        teacherNotebook.printAllNotebooks();
     }
 }

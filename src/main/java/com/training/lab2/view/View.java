@@ -14,7 +14,6 @@ public class View {
                     new Locale("en"));
 
 
-
     public void printMessage(String message) {
         System.out.println(message);
     }

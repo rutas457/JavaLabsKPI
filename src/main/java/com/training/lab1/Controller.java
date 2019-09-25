@@ -12,8 +12,8 @@ public class Controller {
 
     public void processInput() {
         Scanner sc = new Scanner(System.in);
-        createPyramid(sc);
         rotateMatrixCounterClockwise(sc);
+        createPyramid(sc);
     }
 
     private void createPyramid(Scanner sc) {

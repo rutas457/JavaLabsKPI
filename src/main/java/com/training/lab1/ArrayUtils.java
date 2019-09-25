@@ -33,10 +33,10 @@ class ArrayUtils {
         printMatrix(matrix);
     }
 
-    private static void printMatrix(int[][] matrix){
+    private static void printMatrix(int[][] matrix) {
         System.out.print("\nRotated Matrix:\n");
-        for(int[] row:matrix){
-            for (int element:row){
+        for (int[] row : matrix) {
+            for (int element : row) {
                 System.out.print(element + " ");
             }
             System.out.println();

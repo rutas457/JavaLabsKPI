@@ -13,4 +13,8 @@ import java.util.List;
 @Getter
 public class TeacherNotebook {
     private List<Notebook> notebookList;
+
+    public void printAllNotebooks() {
+        notebookList.forEach(System.out::println);
+    }
 }
