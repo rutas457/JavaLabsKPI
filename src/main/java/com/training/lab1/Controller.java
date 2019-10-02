@@ -39,10 +39,10 @@ public class Controller {
     }
 
     private int[][] inputMatrix(Scanner sc) {
-        System.out.print("Enter 2D array size:");
+        System.out.print("Введіть розмірність квадратної матриці:");
         int rows = sc.nextInt();
 
-        System.out.println("Enter array elements:");
+        System.out.println("Введіть елементи массиву");
 
         int[][] twoD = new int[rows][rows];
 
@@ -52,7 +52,7 @@ public class Controller {
                 twoD[i][j] = sc.nextInt();
             }
         }
-        System.out.print("\nData you entered: \n");
+        System.out.print("\nВведений массив: \n");
         for (int[] x : twoD) {
             for (int y : x) {
                 System.out.print(y + " ");

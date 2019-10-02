@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+<nav class="navbar navbar-light navbar-expand-md navigation-clean">
+    <div class="container"><a class="navbar-brand" href="#">KP-3</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse"
+             id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/">Enter card</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/create-card">Create card</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/block-card">Block card</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="article-list">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Your card info</h2>
+                <p class="text-center">SkiPass number&nbsp;<span th:text="${skiPass.cardNumber}"></span></p>
+            </div>
+            <div class="row articles">
+                <div class="col-sm-6 col-md-4 offset-lg-1 item"><a href="#"><img class="img-fluid" src="assets/img/ticket-clipart-purge-clipart-ticket-85041.jpg"></a>
+                    <h3 class="name">Number of passes</h3>
+                    <p class="description" th:text="${skiPass.numberOfPasses}"></p><a href="#" class="action"></a></div>
+                <div class="col-sm-6 col-md-4 col-lg-4 offset-lg-2 item"><a href="#"><img class="img-fluid" src="assets/img/art-tree-design-dayofweek02.jpg"></a>
+                    <h3 class="name">Pass Time</h3>
+                    <p class="description" th:text="${skiPass.skiType}"></p><a href="#" class="action"></a></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -34,7 +34,7 @@ class ArrayUtils {
     }
 
     private static void printMatrix(int[][] matrix) {
-        System.out.print("\nRotated Matrix:\n");
+        System.out.print("\nОбернена матриця:\n");
         for (int[] row : matrix) {
             for (int element : row) {
                 System.out.print(element + " ");

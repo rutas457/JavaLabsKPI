@@ -10,7 +10,7 @@ public class View {
     public static final ResourceBundle bundle =
             ResourceBundle.getBundle(
                     MESSAGES_BUNDLE_NAME,
-                    new Locale("en"));
+                    new Locale("uk"));
 
 
     public void printMessage(String message) {
