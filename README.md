@@ -1,2 +1,2 @@
 # JavaLabsKPI
-Java labs for Java module in the KPI university
+Labs for Java module in the KPI university
