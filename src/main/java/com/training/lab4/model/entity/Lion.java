@@ -8,7 +8,7 @@ import lombok.Setter;
 
 public class Lion extends Mammal {
     @Override
-    void makeSound() {
+    public void makeSound() {
         System.out.println("Roaaar");
     }
 }

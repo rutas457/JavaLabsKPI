@@ -9,7 +9,7 @@ import lombok.Setter;
 
 public class Zebra extends Ungulate {
     @Override
-    void makeSound() {
+    public void makeSound() {
         System.out.println("Tygydyk");
     }
 }

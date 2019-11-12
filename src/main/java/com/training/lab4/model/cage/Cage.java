@@ -5,11 +5,12 @@ import com.training.lab4.model.entity.Animal;
 import com.training.lab4.model.exception.NoSuchAnimalException;
 import com.training.lab4.view.Messages;
 import com.training.lab4.view.View;
+import lombok.Getter;
 
 import java.util.LinkedList;
 import java.util.List;
 
-
+@Getter
 public class Cage<T extends Animal>  {
 
     private List<T> animals;
