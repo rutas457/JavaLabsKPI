@@ -1,11 +1,11 @@
 package com.training.lab4.model.cage;
 
-import com.training.lab4.model.NoFreeCageException;
+import com.training.lab4.model.exception.NoFreeCageException;
 import com.training.lab4.model.entity.Animal;
+import com.training.lab4.model.exception.NoSuchAnimalException;
 import com.training.lab4.view.Messages;
 import com.training.lab4.view.View;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -33,6 +33,14 @@ public class Cage<T extends Animal>  {
             return animals.add(animal);
         }else{
             throw new NoFreeCageException(View.bundle.getString(Messages.NO_FREE_CAGE));
+        }
+    }
+
+    public boolean retrieveAnimal(T animal){
+        if(animals.stream().anyMatch(x->x.equals(animal))){
+            return animals.remove(animal);
+        }else{
+            throw new NoSuchAnimalException(View.bundle.getString(Messages.NO_SUCH_ANIMAL));
         }
     }
 

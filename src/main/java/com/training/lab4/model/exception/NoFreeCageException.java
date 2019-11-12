@@ -1,4 +1,4 @@
-package com.training.lab4.model;
+package com.training.lab4.model.exception;
 
 public class NoFreeCageException extends RuntimeException {
     public NoFreeCageException(String errorMessage) {

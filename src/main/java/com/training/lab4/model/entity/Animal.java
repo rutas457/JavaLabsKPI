@@ -7,7 +7,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public abstract class Animal {
 
+    private String name;
     abstract void makeSound();
 }

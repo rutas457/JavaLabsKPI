@@ -1,15 +1,13 @@
 package com.training.lab4.model.cage;
 
-import com.training.lab4.model.NoFreeCageException;
+import com.training.lab4.model.exception.NoFreeCageException;
 import com.training.lab4.model.entity.Animal;
 import com.training.lab4.model.entity.Eagle;
 import com.training.lab4.model.entity.Lion;
-import org.junit.After;
+import com.training.lab4.model.exception.NoSuchAnimalException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class CageTest {
     private Cage<Animal> cage;
@@ -38,5 +36,10 @@ public class CageTest {
         for(int i = 0; i < CAPACITY+1; i++) {
             cage.addAnimal(new Lion());
         }
+    }
+
+    @Test(expected = NoSuchAnimalException.class)
+    public void retrieveAnimal() {
+        cage.retrieveAnimal(new Lion());
     }
 }
