@@ -1,8 +1,9 @@
 package com.training.lab3.service;
 
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 class SkiPassServiceTest {
@@ -16,7 +17,7 @@ class SkiPassServiceTest {
 
     @Test
     public void generateCardNumber() {
-        Assert.assertEquals(service.generateCardNumber().length(), 7);
+        Assertions.assertEquals(service.generateCardNumber().length(), 7);
     }
 
 }
