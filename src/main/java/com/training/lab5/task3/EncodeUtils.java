@@ -14,7 +14,7 @@ public class EncodeUtils {
 
     public String decode(String string){
         return string.chars()
-                .mapToObj(x-> (char) (x+1))
+                .mapToObj(x-> (char) (x-1))
                 .map(String::valueOf)
                 .collect(Collectors.joining());
     }
