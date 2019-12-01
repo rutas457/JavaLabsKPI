@@ -51,7 +51,7 @@ public class CardController {
     @PostMapping("block-card")
     public String blockCard(@RequestParam("number") String cardNumber, Model model) {
         Optional<SkiPass> skiPass = service.findPassByNumber(cardNumber);
-        if (skiPass.isPresent()) {
+        if (skiPass.isPresent()&&!skiPass.get().isBlocked()) {
             skiPass.get().setBlocked(true);
             service.createNewPass(skiPass.get());
             return "redirect:/";
