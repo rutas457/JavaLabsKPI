@@ -36,10 +36,12 @@ public class Customer {
     }
 
     public double getTotalOrderValue() {
-        return 0;
+        return orders.stream()
+                .map(Order::getValue)
+                .reduce((x, y) -> x + y).orElse(0.0);
     }
 
     public double getMostExpensiveItemValue() {
-        return 0;
+        return orders.stream().map(x -> x.getMostExpensiveItemValue()).max(Double::compareTo).get();
     }
 }

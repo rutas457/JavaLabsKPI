@@ -60,6 +60,6 @@ public class Company {
     }
 
     public Customer getCustomerNamed(String name) {
-        return null;
+        return customers.stream().filter(x -> x.getName().equals(name)).limit(1).reduce((acc, x) -> acc = x).get();
     }
 }

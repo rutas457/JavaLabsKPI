@@ -45,12 +45,15 @@ public class Order {
     }
 
     public double getValue() {
-        // get total of all lineItems
-        return 0;
+        return lineItems.stream()
+                .map(LineItem::getValue)
+                .reduce(Double::sum).orElse(0.0);
+
     }
 
     public double getMostExpensiveItemValue() {
-        // get value of the most expensive item
-        return 0;
+        return lineItems.stream()
+                .map(LineItem::getValue)
+                .max(Double::compareTo).orElse(0.0);
     }
 }
