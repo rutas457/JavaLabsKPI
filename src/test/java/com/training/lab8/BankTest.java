@@ -47,6 +47,7 @@ public class BankTest {
     public void testTotalBalanceEquals() throws InterruptedException, ExecutionException {
         for (int i = 0; i < 10; i++) {
             long prev = bank.getTotalBalance();
+
             for (Future future : refresh())
                 future.get();
             if(prev != bank.getTotalBalance()) {
